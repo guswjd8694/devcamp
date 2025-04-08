@@ -1,46 +1,36 @@
-class Tv {
-    boolean power;
-    int channel;
+public class Test {
+    public static void main(String[] args) {
 
-    void power() {
-        power = !power;
+        Rectangle rectangle = new Rectangle();
+        rectangle.width = 8;
+        rectangle.height = 8;
+
+        int area = rectangle.calculateArea();
+        System.out.println("넓이 " + area);
+
+        int perimeter = rectangle.calculatePerimeter();
+        System.out.println("둘레 길이 " + perimeter);
+
+        boolean square = rectangle.isSquare();
+        System.out.println("정사각형 여부 " + square);
     }
-    void channelUP() {
-        ++channel;
-    }
-    void channelDown() {
-        --channel;
-    }
+
+
 }
 
-class VCR {
-    boolean power;
-    int counter = 0;
-    void power() {
-        power = !power;
-    }
-    void play() { /* 내용 생략 */ }
-    void stop() { /* 내용 생략 */ }
-    void rew() { /* 내용 생략 */ }
-    void ff() { /* 내용 생략 */ }
-}
+class Rectangle {
+    int width = 5;
+    int height = 8;
 
-class TVCR extends Tv {
-    VCR vcr = new VCR();    // VCR클래스를 포함시켜서 사용한다
-
-    void play() {
-        vcr.play();
+     int calculateArea() {
+        return width * height;
     }
 
-    void stop() {
-        vcr.stop();
+     int calculatePerimeter() {
+        return 2 * (width + height);
     }
 
-    void rew() {
-        vcr.rew();
-    }
-
-    void ff() {
-        vcr.ff();
+     boolean isSquare() {
+        return width == height;
     }
 }
