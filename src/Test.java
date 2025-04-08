@@ -1,8 +1,46 @@
-public class Test {
-    public static void main(String[] args) {
-        char ch = '1';
-        boolean b = (int) ch >= 49 || (int) ch <= 122 || ch - '0' >= 0 && ch - '0' < 10 ;
+class Tv {
+    boolean power;
+    int channel;
 
-        System.out.println(ch - '0');
+    void power() {
+        power = !power;
+    }
+    void channelUP() {
+        ++channel;
+    }
+    void channelDown() {
+        --channel;
+    }
+}
+
+class VCR {
+    boolean power;
+    int counter = 0;
+    void power() {
+        power = !power;
+    }
+    void play() { /* 내용 생략 */ }
+    void stop() { /* 내용 생략 */ }
+    void rew() { /* 내용 생략 */ }
+    void ff() { /* 내용 생략 */ }
+}
+
+class TVCR extends Tv {
+    VCR vcr = new VCR();    // VCR클래스를 포함시켜서 사용한다
+
+    void play() {
+        vcr.play();
+    }
+
+    void stop() {
+        vcr.stop();
+    }
+
+    void rew() {
+        vcr.rew();
+    }
+
+    void ff() {
+        vcr.ff();
     }
 }
