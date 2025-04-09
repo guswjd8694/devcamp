@@ -1,36 +1,34 @@
-public class Test {
-    public static void main(String[] args) {
+import com.sun.tools.attach.VirtualMachineDescriptor;
 
-        Rectangle rectangle = new Rectangle();
-        rectangle.width = 8;
-        rectangle.height = 8;
-
-        int area = rectangle.calculateArea();
-        System.out.println("넓이 " + area);
-
-        int perimeter = rectangle.calculatePerimeter();
-        System.out.println("둘레 길이 " + perimeter);
-
-        boolean square = rectangle.isSquare();
-        System.out.println("정사각형 여부 " + square);
+class Parent {
+    int x = 100;
+    Parent(){
+        this(200);
     }
+    Parent(int x){
+        this.x = x;
 
-
+    }
+    int getX() {
+        return x;
+    }
 }
 
-class Rectangle {
-    int width = 5;
-    int height = 8;
+class Child extends Parent {
+    int x = 3000;
 
-     int calculateArea() {
-        return width * height;
+    Child(){
+        this(1000);
     }
 
-     int calculatePerimeter() {
-        return 2 * (width + height);
+    Child(int x){
+        this.x = x;
     }
+}
 
-     boolean isSquare() {
-        return width == height;
+class Test {
+    public static void main(String[] args) {
+        Child c = new Child();
+        System.out.println("x=" + c.getX());
     }
 }
