@@ -1,38 +1,57 @@
 import static java.nio.file.Files.move;
-class Unit {
-    void move(int x, int y) {
-        System.out.println("지정된 위치로 이동. x = " + x + ", y = " + y);
-    }
+abstract class Unit {
+    abstract void move(int x, int y);
     void stop(){
         System.out.println("현재 위치에 정지");
     }
+    abstract void act();
 }
 
 class Marine extends Unit {
-//    move(1,1);
-    void stimPack(){
-        System.out.println("스팀팩을 사용한다.");
+    void move(int x, int y) {
+        System.out.println("Marine이 x=" + x + ", y=" + y + " 위치로 이동");
+    }
+    void stimPack(){ System.out.println("스팀팩을 사용한다."); }
+
+    void act (){
+        stimPack();
     }
 }
 
 class Tank extends Unit {
-    void changeMode(){
-        System.out.println("공격모드를 변환한다.");
+    void move(int x, int y) {
+        System.out.println("Tank가 x=" + x + ", y=" + y + " 위치로 이동");
+    }
+
+    void changeMode() {
+        System.out.println("공격모드를 변환한다");
+    }
+    void act () {
+        changeMode();
     }
 }
 
 class Dropship extends Unit {
-    void load(){
-        System.out.println("선택된 대상을 태운다.");
+    void move(int x, int y) {
+        System.out.println("Dropship이 x=" + x + ", y=" + y + " 위치로 이동");
     }
-    void unload(){
-        System.out.println("선택된 대상을 내린다.");
+    void load(){ System.out.println("선택된 대상을 태운다."); }
+    void unload(){ System.out.println("선택된 대상을 내린다."); }
+
+    void act () {
+        load();
+        unload();
     }
 }
 
 public class Ex15 {
     public static void main(String[] args) {
-        Unit unit = new Unit();
-        Marine marine = new Marine();
+        Unit[] unitArr = {new Marine(), new Tank(), new Dropship()};
+
+        for (Unit unit : unitArr) {
+            unit.move(2, 2);
+            unit.stop();
+            unit.act();
+        }
     }
 }
