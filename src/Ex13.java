@@ -14,6 +14,7 @@ class MyTv2 {
         return channel;
     }
 
+
     void setChannel(int channel) {
         this.channel = channel;
     }
