@@ -33,6 +33,8 @@ class Computer extends Product {
 class Buyer {
     int money = 1000;
     int bonusPoint = 0;
+    Product[] item = new Product[10];   // 구입한 제품을 저장하기 위한 배열 추가
+    int i = 0;  // Product 배열 item에 사용될 index
 
     void buy(Product p) {
         if(money < p.price) {
@@ -42,6 +44,7 @@ class Buyer {
 
         money -= p.price;
         bonusPoint += p.bonusPoint;
+        item[i++] = p;  // 제품을 Product[] item에 저장한다.
         System.out.println(p + "을/를 구입하셨습니다.");
     }
 }
