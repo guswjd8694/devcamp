@@ -22,7 +22,6 @@ class Buyer2 {
     void buy(Product2 p){
         if (money < p.price) {
             System.out.println("잔액이 부족하여 " + p.toString() + "를 살 수 없습니다.");
-            return;
         }
         else {
             money -= p.price;
