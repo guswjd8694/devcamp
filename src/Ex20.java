@@ -37,7 +37,7 @@ class Rectangle extends Shape {
     double width = 0;
     double height = 0;
 
-    public Rectangle(int w, int h) {
+    public Rectangle(double w, double h) {
         this.width = w;
         this.height = h;
     }
