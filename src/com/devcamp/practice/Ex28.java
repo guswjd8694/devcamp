@@ -46,9 +46,9 @@ public class Ex28 {
 }
 
 
-class FruitBox<T extends Fruit & Eatable> extends Box<T> {}
+class FruitBox<T extends Fruit & Eatable> extends Box2<T> {}
 
-class Box<T> {
+class Box2<T> {
     ArrayList<T> list = new ArrayList<>();
     void add(T item) {
         list.add(item);

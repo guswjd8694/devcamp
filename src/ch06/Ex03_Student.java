@@ -1,14 +1,14 @@
-package com.devcamp.practice;
+package ch06;
 
-public class Ex04 {
+public class Ex03_Student {
     public static void main(String[] args) {
-        Student2 s = new Student2("김현정", 1, 1, 100, 60, 76);
+        StudentWithScore s = new StudentWithScore("김현정", 1, 1, 100, 60, 76);
 
         System.out.println(s.info());
     }
 }
 
-class Student2 {
+class StudentWithScore {
     String name;
     int ban;
     int no;
@@ -16,7 +16,7 @@ class Student2 {
     int eng;
     int math;
 
-    Student2(String name, int ban, int no, int kor, int eng, int math) {
+    StudentWithScore(String name, int ban, int no, int kor, int eng, int math) {
         this.name = name;
         this.ban = ban;
         this.no = no;

@@ -1,8 +1,8 @@
-package com.devcamp.practice;
+package ch05;
 
 import java.util.Arrays;
 
-public class Ex01 {
+public class Ex01_ArrayComparison {
     public static void main(String[] args) {
         System.out.println("Q1. 1 ~ 9의 숫자 세자리로 이루어진 2개의 배열을 비교해서 결과를 출력하시오.");
 

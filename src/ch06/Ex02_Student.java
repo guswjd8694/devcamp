@@ -1,8 +1,8 @@
-package com.devcamp.practice;
+package ch06;
 
-public class Ex03 {
+public class Ex02_Student {
     public static void main(String[] args) {
-        Student s = new Student();
+        StudentBasicConstructor s = new StudentBasicConstructor();
         s.name = "김현정";
         s.ban = 1;
         s.no = 1;
@@ -17,7 +17,7 @@ public class Ex03 {
     }
 }
 
-class Student {
+class StudentBasicConstructor {
     String name;
     int ban;
     int no;

@@ -1,6 +1,6 @@
-package com.devcamp.practice;
+package ch06;
 
-public class Ex02 {
+public class Ex01_SutdaCard {
     public static void main(String[] args) {
         SutdaCard card1 = new SutdaCard(3, false);
         SutdaCard card2 = new SutdaCard();
