@@ -1,4 +1,4 @@
-package ch07.mypack.otherpack;
+package ch07.otherpack;
 
 import ch07.mypack.Hello;
 
