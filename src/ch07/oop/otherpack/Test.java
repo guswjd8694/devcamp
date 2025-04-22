@@ -1,6 +1,6 @@
-package ch07.otherpack;
+package ch07.oop.otherpack;
 
-import ch07.mypack.Hello;
+import ch07.oop.mypack.Hello;
 
 public class Test {
     public static void main(String[] args) {

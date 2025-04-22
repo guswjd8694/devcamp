@@ -1,4 +1,4 @@
-package ch07.mypack;
+package ch07.oop.mypack;
 
  public class Hello {
 
